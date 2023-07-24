@@ -90,7 +90,7 @@ public_users.get('/review/:isbn',function (req, res) {
   res.send(books[ISBN].reviews)
 });
 
-// Task 10 
+// Answer for Task 10 is here.
 // Add the code for getting the list of books available in the shop (done in Task 1) using Promise callbacks or async-await with Axios
 
 function getBookList(){
@@ -99,7 +99,7 @@ function getBookList(){
   })
 }
 
-// Get the book list available in the shop
+// List of all the books available for shopping
 public_users.get('/',function (req, res) {
   getBookList().then(
     (bk)=>res.send(JSON.stringify(bk, null, 4)),
@@ -107,7 +107,7 @@ public_users.get('/',function (req, res) {
   );  
 });
 
-// Task 11
+// Answer for task 11
 // Add the code for getting the book details based on ISBN (done in Task 2) using Promise callbacks or async-await with Axios.
 
 function getFromISBN(isbn){
@@ -121,7 +121,7 @@ function getFromISBN(isbn){
   })
 }
 
-// Get book details based on ISBN
+// Get book details based on ISBN number.
 public_users.get('/isbn/:isbn',function (req, res) {
   const isbn = req.params.isbn;
   getFromISBN(isbn).then(
@@ -130,7 +130,7 @@ public_users.get('/isbn/:isbn',function (req, res) {
   )
  });
 
-// Task 12
+// Answer for task 12
 // Add the code for getting the book details based on Author (done in Task 3) using Promise callbacks or async-await with Axios.
 
 function getFromAuthor(author){
@@ -155,7 +155,7 @@ public_users.get('/author/:author',function (req, res) {
   );
 });
 
-// Task 13
+// Answer for task 13
 // Add the code for getting the book details based on Title (done in Task 4) using Promise callbacks or async-await with Axios.
 
 
@@ -172,7 +172,7 @@ function getFromTitle(title){
   })
 }
 
-// Get all books based on title
+// Getting all the books based upon the title 
 public_users.get('/title/:title',function (req, res) {
   const title = req.params.title;
   getFromTitle(title)
